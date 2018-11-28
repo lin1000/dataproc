@@ -14,7 +14,8 @@ if __name__ == "__main__":
     t1 = tweetDF.withColumn("documents",tweetDF.documents)
     t1.printSchema()
 
-    t1.select(explode("documents").alias("tweet")).count()
+    t1DF = t1.select(explode("documents").alias("tweet")).count()
+    t1DF.select("tweet.Author","tweet.FollowersCount").show()
 
     # namesDF = tweetDF.select("firstName","lastName")
     # namesDF.write.option("header","true").csv(sys.argv[2])
