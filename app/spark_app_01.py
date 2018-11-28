@@ -14,7 +14,7 @@ if __name__ == "__main__":
     t1 = tweetDF.withColumn("documents",tweetDF.documents)
     t1.printSchema()
 
-    t1DF = t1.select(explode("documents").alias("tweet")).count()
+    t1DF = t1.select(explode("documents").alias("tweet"))
     t1DF.select("tweet.Author","tweet.FollowersCount").show()
 
     # namesDF = tweetDF.select("firstName","lastName")
