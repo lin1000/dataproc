@@ -15,7 +15,7 @@ if __name__ == "__main__":
     t1.printSchema()
 
     t1DF = t1.select(explode("documents").alias("tweet"))
-    t1DF.select("tweet.Author","tweet.FollowersCount").write.__file__
+    t1DF.select("tweet.FriendsCount","tweet.FollowersCount").write.csv("/output/t1DF")
 
     # namesDF = tweetDF.select("firstName","lastName")
     # namesDF.write.option("header","true").csv(sys.argv[2])
