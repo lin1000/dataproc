@@ -3,6 +3,11 @@ import sys
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 
+def printTop5(r,t):
+    print("Top keywords ", time)
+    for count, keyword in r.take(5):
+        print("keyword:",keyword, "("+ str(count) + ")")
+
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print >> sys.stderr, "Usage: StreamingRequestCount.py <hostname> <port>"
@@ -35,8 +40,3 @@ if __name__ == "__main__":
 
     ssc.start()
     ssc.awaitTermination() 
-
-def printTop5(r,t):
-    print("Top keywords ", time)
-    for count, keyword in r.take(5):
-        print("keyword:",keyword, "("+ str(count) + ")")
