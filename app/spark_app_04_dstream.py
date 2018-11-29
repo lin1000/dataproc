@@ -28,7 +28,7 @@ if __name__ == "__main__":
       .reduceByKey(lambda v1,v2: v1+v2)
 
     #userreqs.pprint()
-	userreqs.saveAsTextFiles("counts")
+    userreqs.saveAsTextFiles("counts")
 
     ssc.start()
     ssc.awaitTermination() 
