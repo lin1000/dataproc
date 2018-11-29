@@ -31,10 +31,12 @@ if __name__ == "__main__":
     #userreqs.saveAsTextFiles("counts")
     
     sortedDS = userreqs.map(lambda fields: (fields[1],fields[0])).transform(lambda rdd:rdd.sortByKey(ascending=False))
-    sortedDS.pprint()
-
-    print(type(userreqs))
-    print(type(sortedDS))    
+    sortedDS.foreachRDD(lambda time,rdd: printTop5(rdd,time))
 
     ssc.start()
     ssc.awaitTermination() 
+
+def printTop5(r,t):
+    print("Top keywords ", time)
+    for count, keyword in r.take(5):
+        print("keyword:",keyword, "("+ str(count) + ")")
