@@ -1,1 +1,1 @@
-spark-submit ../app/spark_app_04_dstream.py localhost 10000
+spark-submit --master local[2] ../app/spark_app_04_dstream.py localhost 10001
