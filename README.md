@@ -9,4 +9,3 @@
 # Submit a Spark Application to CLOUD DATAPROC in 19 Minutes
 # Submit a Spark Application to CLOUD DATAPROC in 20 Minutes
 # Submit a Spark Application to CLOUD DATAPROC in 21 Minutes
-
