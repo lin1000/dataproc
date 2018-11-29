@@ -4,7 +4,7 @@ from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 
 def printTop5(r,t):
-    print("Top keywords ", time)
+    print("Top keywords ", t)
     for count, keyword in r.take(5):
         print("keyword:",keyword, "("+ str(count) + ")")
 
