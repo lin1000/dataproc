@@ -27,7 +27,7 @@ if __name__ == "__main__":
       .map(lambda line: (line.split(' ')[2],1)) \
       .reduceByKey(lambda v1,v2: v1+v2)
 
-    #userreqs.pprint()
+    userreqs.pprint()
     userreqs.saveAsTextFiles("counts")
 
     ssc.start()
