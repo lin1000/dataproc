@@ -9,7 +9,7 @@ if __name__ == "__main__":
         exit(-1)
 
     sc = SparkContext()
-    sc.setLogLevel("WARN")
+    sc.setLogLevel("ERROR")
 	
     #2 denote for 2 batchDuration
     ssc = StreamingContext(sc,2)
