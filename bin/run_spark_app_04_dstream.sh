@@ -1,0 +1,1 @@
+spark-submit ../app/spark_app_04_dstream.py localhost 10000
