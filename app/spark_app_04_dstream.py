@@ -27,8 +27,14 @@ if __name__ == "__main__":
       .map(lambda line: (line.split(' ')[2],1)) \
       .reduceByKey(lambda v1,v2: v1+v2)
 
-    userreqs.pprint()
-    userreqs.saveAsTextFiles("counts")
+    #userreqs.pprint()
+    #userreqs.saveAsTextFiles("counts")
+    
+    sortedDS = userreqs.map(lambda fields: (fields[1],fields[0])).transform(lambda rdd:rdd.sortByKey(ascending=False))
+    sortedDS.pprint()
+
+    print(type(userreqs))
+    print(type(sortedDS))    
 
     ssc.start()
     ssc.awaitTermination() 
